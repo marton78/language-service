@@ -1,0 +1,24 @@
+import assert from 'assert';
+import { toStringOrRegExp } from '../../src/language/rubyLanguage.js';
+describe('rubyLanguage', () => {
+    it('should preserve regexp flags in step definitions', () => {
+        const node = {
+            type: 'regex',
+            text: '/^a regexp$/i',
+            startPosition: { row: 0, column: 6 },
+            endPosition: { row: 0, column: 19 },
+            children: [
+                {
+                    type: 'string_content',
+                    text: '^a regexp$',
+                    startPosition: { row: 0, column: 7 },
+                    endPosition: { row: 0, column: 17 },
+                    children: [],
+                },
+            ],
+        };
+        const result = toStringOrRegExp(node);
+        assert.deepStrictEqual(result, /^a regexp$/i);
+    });
+});
+//# sourceMappingURL=rubyLanguage.test.js.map

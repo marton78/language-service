@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getGherkinFormattingEdits = getGherkinFormattingEdits;
+var gherkin_utils_1 = require("@cucumber/gherkin-utils");
+var parseGherkinDocument_js_1 = require("../gherkin/parseGherkinDocument.js");
+// https://microsoft.github.io/language-server-protocol/specifications/specification-3-17/#textDocument_formatting
+function getGherkinFormattingEdits(gherkinSource) {
+    var gherkinDocument = (0, parseGherkinDocument_js_1.parseGherkinDocument)(gherkinSource).gherkinDocument;
+    if (gherkinDocument === undefined)
+        return [];
+    var newText = (0, gherkin_utils_1.pretty)(gherkinDocument);
+    var lines = gherkinSource.split(/\r?\n/);
+    var line = lines.length - 1;
+    var character = lines[line].length;
+    var textEdit = {
+        newText: newText,
+        range: {
+            start: {
+                line: 0,
+                character: 0,
+            },
+            end: {
+                line: line,
+                character: character,
+            },
+        },
+    };
+    return [textEdit];
+}
+//# sourceMappingURL=getGherkinFormattingEdits.js.map

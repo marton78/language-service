@@ -1,0 +1,31 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getLanguage = getLanguage;
+var csharpLanguage_js_1 = require("./csharpLanguage.js");
+var goLanguage_js_1 = require("./goLanguage.js");
+var javaLanguage_js_1 = require("./javaLanguage.js");
+var javascriptLanguage_js_1 = require("./javascriptLanguage.js");
+var kotlinLanguage_js_1 = require("./kotlinLanguage.js");
+var phpLanguage_js_1 = require("./phpLanguage.js");
+var pythonLanguage_js_1 = require("./pythonLanguage.js");
+var rubyLanguage_js_1 = require("./rubyLanguage.js");
+var rustLanguage_js_1 = require("./rustLanguage.js");
+var scalaLanguage_js_1 = require("./scalaLanguage.js");
+var tsxLanguage_js_1 = require("./tsxLanguage.js");
+var languageByName = {
+    java: javaLanguage_js_1.javaLanguage,
+    tsx: tsxLanguage_js_1.tsxLanguage,
+    c_sharp: csharpLanguage_js_1.csharpLanguage,
+    php: phpLanguage_js_1.phpLanguage,
+    ruby: rubyLanguage_js_1.rubyLanguage,
+    rust: rustLanguage_js_1.rustLanguage,
+    python: pythonLanguage_js_1.pythonLanguage,
+    javascript: javascriptLanguage_js_1.javascriptLanguage,
+    go: goLanguage_js_1.goLanguage,
+    scala: scalaLanguage_js_1.scalaLanguage,
+    kotlin: kotlinLanguage_js_1.kotlinLanguage,
+};
+function getLanguage(languageName) {
+    return languageByName[languageName];
+}
+//# sourceMappingURL=languages.js.map

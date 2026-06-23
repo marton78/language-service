@@ -1,0 +1,28 @@
+import { csharpLanguage } from './csharpLanguage.js';
+import { goLanguage } from './goLanguage.js';
+import { javaLanguage } from './javaLanguage.js';
+import { javascriptLanguage } from './javascriptLanguage.js';
+import { kotlinLanguage } from './kotlinLanguage.js';
+import { phpLanguage } from './phpLanguage.js';
+import { pythonLanguage } from './pythonLanguage.js';
+import { rubyLanguage } from './rubyLanguage.js';
+import { rustLanguage } from './rustLanguage.js';
+import { scalaLanguage } from './scalaLanguage.js';
+import { tsxLanguage } from './tsxLanguage.js';
+const languageByName = {
+    java: javaLanguage,
+    tsx: tsxLanguage,
+    c_sharp: csharpLanguage,
+    php: phpLanguage,
+    ruby: rubyLanguage,
+    rust: rustLanguage,
+    python: pythonLanguage,
+    javascript: javascriptLanguage,
+    go: goLanguage,
+    scala: scalaLanguage,
+    kotlin: kotlinLanguage,
+};
+export function getLanguage(languageName) {
+    return languageByName[languageName];
+}
+//# sourceMappingURL=languages.js.map

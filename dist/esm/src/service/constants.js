@@ -1,0 +1,3 @@
+export const diagnosticCodeUndefinedStep = 'cucumber.undefined-step';
+export const CONTAINS_PARAMETERS = /<.*?>/;
+//# sourceMappingURL=constants.js.map
