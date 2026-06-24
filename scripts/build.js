@@ -68,6 +68,12 @@ if (!fs.existsSync(treeSitterCli)) {
 } else {
   for (const { npm, dir, wasm } of languages) {
     const module = path.join('node_modules', npm, dir)
+    const destPath = `${distDir}/${wasm}.wasm`
+
+    if (fs.existsSync(destPath)) {
+      console.log(`Skipping ${wasm}.wasm - already present in ${distDir}/`)
+      continue
+    }
 
     if (!fs.existsSync(module)) {
       console.error(
