@@ -1,5 +1,5 @@
 {
-  "name": "@cucumber/language-service",
+  "name": "@marton78/cucumber-language-service",
   "version": "1.7.0",
   "description": "Cucumber Language Service",
   "type": "module",
