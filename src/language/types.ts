@@ -47,6 +47,7 @@ export const LanguageNames = [
   'go',
   'scala',
   'kotlin',
+  'swift',
 ] as const
 export type LanguageName = (typeof LanguageNames)[number]
 

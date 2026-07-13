@@ -19,6 +19,8 @@ import Rust from 'tree-sitter-rust'
 // @ts-ignore
 import Scala from 'tree-sitter-scala'
 // @ts-ignore
+import Swift from 'tree-sitter-swift'
+// @ts-ignore
 import TypeScript from 'tree-sitter-typescript'
 
 import { LanguageName, ParserAdapter } from '../language/types.js'
@@ -62,6 +64,9 @@ export class NodeParserAdapter implements ParserAdapter {
         break
       case 'kotlin':
         this.parser.setLanguage(Kotlin)
+        break
+      case 'swift':
+        this.parser.setLanguage(Swift)
         break
       default:
         throw new Error(`Unsupported language: ${languageName}`)

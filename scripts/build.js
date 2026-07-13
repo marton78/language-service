@@ -55,6 +55,11 @@ const languages = [
     dir: '',
     wasm: 'kotlin',
   },
+  {
+    npm: 'tree-sitter-swift',
+    dir: '',
+    wasm: 'swift',
+  },
 ]
 
 // Build wasm parsers for supported languages
